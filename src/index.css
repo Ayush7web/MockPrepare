@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+@import "tailwindcss";
+
+.blue-red{
+background:linear-gradient(90deg, #a78bfa, #f30ea6);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
