@@ -14,7 +14,7 @@ const AppLayout = () => {
       {location.pathname === "/" && <HeroBanner />}
       {location.pathname === "/" && <Section />}
       {location.pathname === "/" && (
-        <div className="-space-y-84 md:-space-y-34">
+        <div className="-space-y-64 md:-space-y-34">
           <CardServe title="Free Test" buttonText="Click it" />
           <CardServe title="Payment" buttonText="Get exiciting test" />
           <CardServe title="Mock Prepare" buttonText="what can do?" />
