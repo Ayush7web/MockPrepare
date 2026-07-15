@@ -5,6 +5,7 @@ import HeroBanner from "../components/heroBanner";
 import Section from "../components/Section";
 import CardServe from "../components/CardServe";
 import Algoritham from "../components/Algoritham";
+import Footer from "../components/Footer";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const AppLayout = () => {
       <main className="min-h-screen">
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 };
