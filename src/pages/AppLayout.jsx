@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import HeroBanner from "../components/heroBanner";
 import Section from "../components/Section";
 import CardServe from "../components/CardServe";
+import Algoritham from "../components/Algoritham";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const AppLayout = () => {
           <CardServe title="Mock Prepare" buttonText="what can do?" />
         </div>
       )}
-
+      {location.pathname === "/" && <Algoritham />}
       <main className="min-h-screen">
         <Outlet />
       </main>
