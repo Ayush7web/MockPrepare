@@ -3,7 +3,7 @@ import {
   SiInstagram,
   SiTwinmotion,
 } from "@icons-pack/react-simple-icons";
-import { BikeIcon, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Computer,  } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const footerData = {
@@ -57,8 +57,8 @@ const Footer = () => {
           {/* Brand  */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <BikeIcon className="w-6 h-6 text-white" />
-              <span className="text-xl font-semibold">InstaCart</span>
+              < Computer className="w-6 h-6 text-white" />
+              <span className="text-xl font-semibold">Mock-Prepare</span>
             </Link>
             <p className="text-sm text-white/70 mb-4">
               **Mock Prepare** is an EdTech platform designed to help Class 10
