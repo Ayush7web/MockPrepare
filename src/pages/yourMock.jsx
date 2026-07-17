@@ -3,7 +3,7 @@
 import { FaRocket, FaFlask, FaSquareRootAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Physics from "../assets/Physics.jpg";
-import Chemistry from "../assets/Chemistry.jpg";
+import Chemistry from "../assets/chemistry.jpg";
 import Maths from "../assets/Maths.jpg";
 
 const MockTestSection = () => {
