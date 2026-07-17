@@ -21,7 +21,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-amber-700 flex items-center justify-center px-5">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-500 to-amber-700 flex items-center justify-center px-5">
       {/* Background Blur */}
       <div className="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-orange-300/30 blur-3xl"></div>
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-yellow-300/20 blur-3xl"></div>
