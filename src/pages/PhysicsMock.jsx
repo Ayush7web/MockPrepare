@@ -1,10 +1,9 @@
-// import { Outlet } from "react-router-dom";
 
 const PhysicsMock = () => {
   return (
     <div>
-      jshdfjsdhfsjdf
-      {/* <Outlet /> */}
+      Physics Mock Test
+      
     </div>
   );
 };
