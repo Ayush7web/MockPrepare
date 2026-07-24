@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Loader } from "lucide-react";
 
 const PhysicsMock = () => {
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState("");
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,21 +27,25 @@ const PhysicsMock = () => {
   }, []);
 
   return (
-    <div className="relative top-10 ">
-      <div className="text-3xl text-center font-semibold text-blue-500 shadow-2xl hover:text-blue-700">
-        Topic: Physics <span>For Class 10th</span>
+    <>
+      <div className="fixed flex z-50 inset-0 items-center justify-center bg-white/70">
+        <Loader className="w-10 h-10 animate-spin" />
       </div>
-      {retrieveData.map((item, index) => (
-        <div key={index} className="space-y-2.5 border">
-          <p>{item.topic}</p>
-          <p>{item.questionsText}</p>
-          <p>{item.options}</p>
-          <p>{item.correctAnswer}</p>
-          <p>{item.explanation}</p>
+      <div className="relative top-10 ">
+        <div className="text-3xl text-center font-semibold text-blue-500 shadow-2xl hover:text-blue-700">
+          Topic: Physics <span>For Class 10th</span>
         </div>
-      ))}
-    </div>
-  );
+
+        <div className="space-y-2.5 border">
+          <p>{retrieveData[currentIndex]?.topic}</p>
+          <p>{retrieveData[currentIndex]?.questionsText}</p>
+          <p>{retrieveData[currentIndex]?.options}</p>
+          <p>{retrieveData[currentIndex]?.correctAnswer}</p>
+          <p>{retrieveData[currentIndex]?.explanation}</p>
+        </div>
+      </div>
+    </>
+  ); 
 };
 
 export default PhysicsMock;
