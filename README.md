@@ -27,7 +27,14 @@ STEPS:--
 5. I created Blogs part , Lets fun part which is extra ordinary for students, then login with Phone Number.
 6. One section is Your Mock ,where every students will do a test.
 7. In this "your mock " frame , i created Next button for next questions , and back buttons for back questions. 
-8.  
+8. Now, the next is set my "Finish Button", when the mock test became the last question , then there a finish button will show.
+
+9. // here we use navigate , when user reached at last question then will be finish button , if click it then go to /yourmock page
+
+<!-- 10.  <button onClick={() => navigate('/yourmock')} -->
+10. when we write direct  navigate in onClick , ten function does not be waiting for use r it directly render , when screen looks . that is why we pass () => this things until or unless user not click the finish button , it will not go /yourmock.
+
+11.
 
 
 

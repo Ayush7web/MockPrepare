@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Loader } from "lucide-react";
+import {useNavigate} from "react-router-dom";
+
+
 
 const PhysicsMock = () => {
+
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);
+
+  // here we use navigate , when user reached at last question then will be finish button , if click it then go to /yourmock page
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +57,11 @@ const PhysicsMock = () => {
 
   return (
     <>
+      <div className="text-center mt-7">
+        <div className="font-semibold font-serif text-2xl text-blue-700">
+          Sets of 15 Questions for Physics
+        </div>
+      </div>
       {loader ? (
         <div className="fixed flex z-50 inset-0 items-center justify-center bg-white/70">
           <Loader className="w-10 h-10 animate-spin" />
@@ -92,7 +104,6 @@ const PhysicsMock = () => {
         >
           Back
         </button>
-
         {/* ➡️ Next Button */}
         <button
           onClick={handleNext}
@@ -100,6 +111,15 @@ const PhysicsMock = () => {
         >
           Next
         </button>
+        {/* // create a function for finish button */}
+        {currentIndex === retrieveData.length - 1 ? (
+          <button onClick={() => navigate('/yourmock')}
+           className="px-6 py-2.5 bg-red-600 hover:bg-red-800 active:scale-95 text-white font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200">
+            Finish
+          </button>
+        ) : (
+          null // if you want not write in else part , then you put it in null 
+        )}
       </div>
     </>
   );
