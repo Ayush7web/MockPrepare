@@ -12,7 +12,7 @@ const PhysicsMock = () => {
       setLoader(true);
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/questions?topic=physics class 10th",
+          "https://mock-backend-jt3c.onrender.com/api/questions?topic=physics class 10th",
         );
 
         setRetrieveData(response.data.data);
