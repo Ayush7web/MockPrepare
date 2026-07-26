@@ -4,7 +4,7 @@ import { Loader } from "lucide-react";
 
 const PhysicsMock = () => {
   const [retrieveData, setRetrieveData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -16,7 +16,6 @@ const PhysicsMock = () => {
         );
 
         setRetrieveData(response.data.data);
-        setCurrentIndex(currentIndex + 1);
       } catch (error) {
         console.log("mission failed", error.message);
       } finally {
@@ -28,6 +27,26 @@ const PhysicsMock = () => {
 
     fetchData();
   }, []);
+
+  // handle onclick function
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => {
+      if (prev < retrieveData.length - 1) {
+        return prev + 1;
+      }
+      return prev;
+    });
+  };
+
+  const handleBack = () => {
+    setCurrentIndex((prev) => {
+      if (prev > 0) {
+        return prev - 1;
+      }
+      return prev;
+    });
+  };
 
   return (
     <>
@@ -42,7 +61,9 @@ const PhysicsMock = () => {
               {retrieveData[currentIndex]?.topic}
             </p>
           </div>
-          <p className="text-lg">{retrieveData[currentIndex]?.questionsText}</p>
+          <p className="text-lg">
+            Q{currentIndex + 1}. {retrieveData[currentIndex]?.questionsText}
+          </p>
           <div className="space-y-1">
             {retrieveData[currentIndex]?.options?.map((option, index) => {
               return (
@@ -63,16 +84,20 @@ const PhysicsMock = () => {
         </div>
       )}
 
-      <div onClick={}
-       className="flex items-center justify-center mt-6 w-full gap-10">
+      <div className="flex items-center justify-center mt-6 w-full gap-10">
         {/* ⬅️ Back Button */}
-        <button className="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 active:scale-95 text-gray-700 font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200">
+        <button
+          onClick={handleBack}
+          className="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 active:scale-95 text-gray-700 font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200"
+        >
           Back
         </button>
 
         {/* ➡️ Next Button */}
-        <button onClick={}
-        className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200">
+        <button
+          onClick={handleNext}
+          className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200"
+        >
           Next
         </button>
       </div>
