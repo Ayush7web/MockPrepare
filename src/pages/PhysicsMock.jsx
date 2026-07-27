@@ -7,7 +7,7 @@ const PhysicsMock = () => {
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState({}); // obj form
   // const [clickedAnswer, setClickedAnswer] = useState();
 
   // here we use navigate , when user reached at last question then will be finish button , if click it then go to /yourmock page
@@ -56,8 +56,7 @@ const PhysicsMock = () => {
 
   // check if abswer is correct then exp. and correct answer will be display.
   const isCorrect =
-    selectedOption?.trim() ===
-    retrieveData[currentIndex]?.correctAnswer?.trim();
+    selectedOption[currentIndex] === retrieveData[currentIndex]?.correctAnswer;
 
   return (
     <>
@@ -86,21 +85,26 @@ const PhysicsMock = () => {
               return (
                 <p
                   // onClick={() => setClickedAnswer(option)}
-                  onClick={() => setSelectedOption(option)} //add onclick here for correct check out answer
+                  onClick={() => {
+                    setSelectedOption((prev) => ({
+                      ...prev, // it is form of obj i.e. data save rahe.
+                      [currentIndex]: option,
+                    }));
+                  }} //add onclick here for correct check out answer
                   key={index}
                   className="border  w-auto p-4 rounded-2xl hover:bg-gray-300 cursor-pointer"
                 >
                   {/* this is inbuild fns, provide javascript */}
                   <strong>{String.fromCharCode(65 + index)}.</strong> {option}
                   {/* Check option correct or not */}
-                  {selectedOption?.trim() === option?.trim() &&
-                    retrieveData[currentIndex]?.correctAnswer?.trim() ===
-                      option?.trim() && (
+                  {selectedOption[currentIndex] === option &&
+                    retrieveData[currentIndex]?.correctAnswer === option && (
                       <CheckCircleIcon className="text-green-700" />
                     )}
-                  {selectedOption?.trim() === option?.trim() &&
-                    retrieveData[currentIndex]?.correctAnswer?.trim() !==
-                      option?.trim() && <X className="text-red-700" />}
+                  {selectedOption[currentIndex] === option &&
+                    retrieveData[currentIndex]?.correctAnswer !== option && (
+                      <X className="text-red-700" />
+                    )}
                 </p>
               );
 
@@ -110,7 +114,7 @@ const PhysicsMock = () => {
 
           {/* If this will be correct then it would be show on scn DYNAMICALLY SHOW*/}
           {isCorrect && (
-            <div>
+            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-green-600 font-semibold">
                 Correct Answer : {retrieveData[currentIndex]?.correctAnswer}
               </p>
@@ -123,14 +127,14 @@ const PhysicsMock = () => {
       )}
 
       <div className="flex items-center justify-center mt-6 w-full gap-10">
-        {/* ⬅️ Back Button */}
+        {/* ⬅ Back Button */}
         <button
           onClick={handleBack}
           className="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 active:scale-95 text-gray-700 font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200"
         >
           Back
         </button>
-        {/* ➡️ Next Button */}
+        {/*  Next Button */}
         <button
           onClick={handleNext}
           className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200"

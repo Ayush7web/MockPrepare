@@ -38,6 +38,7 @@ STEPS:--
 
 12. The next thing has to be implemented , that is when the answer is correct then correct answer and Explanation will be Displayed.
 
+13. Now, the previos state of answer stay , if i go back to see my answer, what was i clicked. // Done 
 
 
 
