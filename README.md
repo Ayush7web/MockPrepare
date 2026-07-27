@@ -34,7 +34,7 @@ STEPS:--
 <!-- 10.  <button onClick={() => navigate('/yourmock')} -->
 10. when we write direct  navigate in onClick , ten function does not be waiting for use r it directly render , when screen looks . that is why we pass () => this things until or unless user not click the finish button , it will not go /yourmock.
 
-11.
+11.Next part is choosing option correct/wrong : create a state for selectedOption clickedAnswer.
 
 
 

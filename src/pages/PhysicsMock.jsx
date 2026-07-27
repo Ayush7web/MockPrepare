@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Loader } from "lucide-react";
+import { CheckCircleIcon, Loader } from "lucide-react";
 import {useNavigate} from "react-router-dom";
 
 
@@ -10,6 +10,8 @@ const PhysicsMock = () => {
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);
+  const [selectedOption, setSelectedOption] = useState();
+  const [clickedAnswer, setClickedAnswer] = useState();
 
   // here we use navigate , when user reached at last question then will be finish button , if click it then go to /yourmock page
   const navigate = useNavigate();
@@ -55,6 +57,26 @@ const PhysicsMock = () => {
     });
   };
 
+
+  // create a func for handleclick 
+
+  const handleSelectedOption = (...selectedOption) => {
+    setSelectedOption(() => selectedOption);
+  };
+
+
+const handleclickedoption = () =>{
+  setClickedAnswer(clickedAnswer)
+}
+
+
+
+
+
+
+
+
+
   return (
     <>
       <div className="text-center mt-7">
@@ -76,14 +98,25 @@ const PhysicsMock = () => {
           <p className="text-lg">
             Q{currentIndex + 1}. {retrieveData[currentIndex]?.questionsText}
           </p>
-          <div className="space-y-1">
+          {/* FOR OPTIONS  */}
+          <div className="space-y-4">
             {retrieveData[currentIndex]?.options?.map((option, index) => {
               return (
-                <p key={index}>
+                <p
+                  key={index}
+                  className="border  w-auto p-4 rounded-2xl hover:bg-gray-300 cursor-pointer"
+                >
                   {/* this is inbuild fns, provide javascript */}
                   <strong>{String.fromCharCode(65 + index)}.</strong> {option}
+                  {/* Check option correct or not */}
+                  <button onClick={handleSelectedOption}>
+                    {retrieveData[currentIndex]?.correctAnswer === index ? (
+                      <CheckCircleIcon className="text-green-700" />
+                    ) : null}
+                  </button>
                 </p>
               );
+              
               // here return is needed because if you don't use return statement then it will not be rendered.
             })}
           </div>
