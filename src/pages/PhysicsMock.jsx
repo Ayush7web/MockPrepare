@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CheckCircleIcon, Loader } from "lucide-react";
-import {useNavigate} from "react-router-dom";
-
-
+import { CheckCircleIcon, Loader, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const PhysicsMock = () => {
-
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);
-  const [selectedOption, setSelectedOption] = useState();
-  const [clickedAnswer, setClickedAnswer] = useState();
+  const [selectedOption, setSelectedOption] = useState("");
+  // const [clickedAnswer, setClickedAnswer] = useState();
 
   // here we use navigate , when user reached at last question then will be finish button , if click it then go to /yourmock page
   const navigate = useNavigate();
@@ -57,25 +54,10 @@ const PhysicsMock = () => {
     });
   };
 
-
-  // create a func for handleclick 
-
-  const handleSelectedOption = (...selectedOption) => {
-    setSelectedOption(() => selectedOption);
-  };
-
-
-const handleclickedoption = () =>{
-  setClickedAnswer(clickedAnswer)
-}
-
-
-
-
-
-
-
-
+  // check if abswer is correct then exp. and correct answer will be display.
+  const isCorrect =
+    selectedOption?.trim() ===
+    retrieveData[currentIndex]?.correctAnswer?.trim();
 
   return (
     <>
@@ -103,29 +85,40 @@ const handleclickedoption = () =>{
             {retrieveData[currentIndex]?.options?.map((option, index) => {
               return (
                 <p
+                  // onClick={() => setClickedAnswer(option)}
+                  onClick={() => setSelectedOption(option)} //add onclick here for correct check out answer
                   key={index}
                   className="border  w-auto p-4 rounded-2xl hover:bg-gray-300 cursor-pointer"
                 >
                   {/* this is inbuild fns, provide javascript */}
                   <strong>{String.fromCharCode(65 + index)}.</strong> {option}
                   {/* Check option correct or not */}
-                  <button onClick={handleSelectedOption}>
-                    {retrieveData[currentIndex]?.correctAnswer === index ? (
+                  {selectedOption?.trim() === option?.trim() &&
+                    retrieveData[currentIndex]?.correctAnswer?.trim() ===
+                      option?.trim() && (
                       <CheckCircleIcon className="text-green-700" />
-                    ) : null}
-                  </button>
+                    )}
+                  {selectedOption?.trim() === option?.trim() &&
+                    retrieveData[currentIndex]?.correctAnswer?.trim() !==
+                      option?.trim() && <X className="text-red-700" />}
                 </p>
               );
-              
+
               // here return is needed because if you don't use return statement then it will not be rendered.
             })}
           </div>
-          <p className="text-green-600 font-semibold">
-            Correct Answer : {retrieveData[currentIndex]?.correctAnswer}
-          </p>
-          <p className="text-gray-600 text-xl">
-            Explanation : {retrieveData[currentIndex]?.explanation}
-          </p>
+
+          {/* If this will be correct then it would be show on scn DYNAMICALLY SHOW*/}
+          {isCorrect && (
+            <div>
+              <p className="text-green-600 font-semibold">
+                Correct Answer : {retrieveData[currentIndex]?.correctAnswer}
+              </p>
+              <p className="text-gray-600 text-xl">
+                Explanation : {retrieveData[currentIndex]?.explanation}
+              </p>
+            </div>
+          )}
         </div>
       )}
 
@@ -145,14 +138,16 @@ const handleclickedoption = () =>{
           Next
         </button>
         {/* // create a function for finish button */}
-        {currentIndex === retrieveData.length - 1 ? (
-          <button onClick={() => navigate('/yourmock')}
-           className="px-6 py-2.5 bg-red-600 hover:bg-red-800 active:scale-95 text-white font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200">
-            Finish
-          </button>
-        ) : (
-          null // if you want not write in else part , then you put it in null 
-        )}
+        {
+          currentIndex === retrieveData.length - 1 ? (
+            <button
+              onClick={() => navigate("/yourmock")}
+              className="px-6 py-2.5 bg-red-600 hover:bg-red-800 active:scale-95 text-white font-medium text-base rounded-lg shadow-sm hover:shadow transition-all duration-200"
+            >
+              Finish
+            </button>
+          ) : null // if you want not write in else part , then you put it in null
+        }
       </div>
     </>
   );
