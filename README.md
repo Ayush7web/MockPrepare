@@ -63,7 +63,9 @@ STEPS:--
   //   }
   // }, [selectedOption, currentIndex]);
 
-  
+  15.now the execution part is:  When answer will be right then , party spray will boom it.
+
+  16. 
 
 
 

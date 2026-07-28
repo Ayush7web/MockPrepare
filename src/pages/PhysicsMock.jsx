@@ -3,6 +3,7 @@ import axios from "axios";
 import { CheckCircleIcon, Loader, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import confetti from "canvas-confetti";
 
 // =====================================================================================
 
@@ -126,6 +127,12 @@ const PhysicsMock = () => {
                         position: "top-right",
                         autoClose: 2000,
                         theme: "colored",
+                      });
+                      // spray effect use for correctAnswer
+                      confetti({
+                        particleCount: 201,
+                        spread: 81,
+                        origin: { y: 0.7 },
                       });
                     } else {
                       toast.error(" Don't Worry Bro, One More Try", {
