@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { CheckCircleIcon, Loader, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+
+// =====================================================================================
 
 const PhysicsMock = () => {
   const [retrieveData, setRetrieveData] = useState([]);
@@ -58,6 +61,28 @@ const PhysicsMock = () => {
   const isCorrect =
     selectedOption[currentIndex] === retrieveData[currentIndex]?.correctAnswer;
 
+  // handle Toasting style condition
+
+  // useEffect(() => {
+  //   if (
+  //     selectedOption[currentIndex] === undefined ||
+  //     selectedOption[currentIndex] === null
+  //   ) {
+  //     return;
+  //   }
+  //   if (
+  //     selectedOption[currentIndex] === retrieveData[currentIndex]?.correctAnswer
+  //   ) {
+  //     toast.success(" Keep it up Bro, Kya Answer Diya hai ", {
+  //       position: "top-right",
+  //       autoClose: 2000,
+  //       theme: "colored",
+  //     });
+  //   } else {
+  //     toast.error("Don't Worry Bro , One More Try");
+  //   }
+  // }, [selectedOption, currentIndex]);
+
   return (
     <>
       <div className="text-center mt-7">
@@ -90,6 +115,25 @@ const PhysicsMock = () => {
                       ...prev, // it is form of obj i.e. data save rahe.
                       [currentIndex]: option,
                     }));
+
+                    const correctAnswer =
+                      retrieveData[currentIndex]?.correctAnswer;
+
+                    if (
+                      String(option).trim() === String(correctAnswer).trim()
+                    ) {
+                      toast.success(" Keep it up Bro, Kya Answer Diya hai", {
+                        position: "top-right",
+                        autoClose: 2000,
+                        theme: "colored",
+                      });
+                    } else {
+                      toast.error(" Don't Worry Bro, One More Try", {
+                        position: "top-right",
+                        autoClose: 2000,
+                        theme: "colored",
+                      });
+                    }
                   }} //add onclick here for correct check out answer
                   key={index}
                   className="border  w-auto p-4 rounded-2xl hover:bg-gray-300 cursor-pointer"
@@ -153,6 +197,8 @@ const PhysicsMock = () => {
           ) : null // if you want not write in else part , then you put it in null
         }
       </div>
+
+      <ToastContainer />
     </>
   );
 };

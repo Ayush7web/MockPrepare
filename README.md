@@ -39,6 +39,31 @@ STEPS:--
 12. The next thing has to be implemented , that is when the answer is correct then correct answer and Explanation will be Displayed.
 
 13. Now, the previos state of answer stay , if i go back to see my answer, what was i clicked. // Done 
+14. Set the Toastify function for extra designing .
+
+ // handle Toasting style condition
+
+  // useEffect(() => {
+  //   if (
+  //     selectedOption[currentIndex] === undefined ||
+  //     selectedOption[currentIndex] === null
+  //   ) {
+  //     return;
+  //   }
+  //   if (
+  //     selectedOption[currentIndex] === retrieveData[currentIndex]?.correctAnswer
+  //   ) {
+  //     toast.success(" Keep it up Bro, Kya Answer Diya hai ", {
+  //       position: "top-right",
+  //       autoClose: 2000,
+  //       theme: "colored",
+  //     });
+  //   } else {
+  //     toast.error("Don't Worry Bro , One More Try");
+  //   }
+  // }, [selectedOption, currentIndex]);
+
+  
 
 
 
