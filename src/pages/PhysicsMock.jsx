@@ -8,6 +8,7 @@ import confetti from "canvas-confetti";
 // =====================================================================================
 
 const PhysicsMock = () => {
+  
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);

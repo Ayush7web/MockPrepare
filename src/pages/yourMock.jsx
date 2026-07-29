@@ -57,7 +57,7 @@ const MockTestSection = () => {
               to="/physics"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300"
             >
-              Start Mock
+              Start Free Mock
             </Link>
           </div>
         </div>
@@ -89,7 +89,7 @@ const MockTestSection = () => {
               to="/chemistry"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300"
             >
-              Start Mock
+              Start Free Mock
             </Link>
           </div>
         </div>
@@ -121,7 +121,7 @@ const MockTestSection = () => {
               to="/maths"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300"
             >
-              Start Mock
+              Start Free Mock
             </Link>
           </div>
         </div>

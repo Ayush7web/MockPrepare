@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FiPhone, FiArrowRight } from "react-icons/fi";
 
 const LoginPage = () => {
+  window.scrollTo(0, 0)// start from top page
   const [phone, setPhone] = useState("");
 
   const handleSubmit = (e) => {

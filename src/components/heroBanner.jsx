@@ -13,7 +13,7 @@ const heroBanner = () => {
       modules={[Autoplay]}
       slidesPerView={1}
       autoplay={{
-        delay: 2000,
+        delay: 1500,
         disableOnInteraction: false,
       }}
       loop={true}

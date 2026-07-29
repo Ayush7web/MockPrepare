@@ -1,4 +1,5 @@
 const letsFun = () => {
+  window.scrollTo(0, 0);
   return (
     <div className="flex min-h-[40vh] items-center justify-center bg-transparent px-4 text-center">
       <div className="space-y-4 max-w-2xl">

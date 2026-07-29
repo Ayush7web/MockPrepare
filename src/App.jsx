@@ -1,5 +1,6 @@
 // import React from 'react'
 import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import { Route, Routes } from "react-router-dom";
 import Blogs from "./pages/blogs";
 import LetsFun from "./pages/letsFun";
@@ -13,6 +14,7 @@ import MathsMock from "./pages/MathsMock";
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<AppLayout />}>
           {/* child component ke inner koi component call karege bhi to / remove kar dege */}

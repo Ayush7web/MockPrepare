@@ -3,7 +3,7 @@ import {
   SiInstagram,
   SiTwinmotion,
 } from "@icons-pack/react-simple-icons";
-import { Mail, Phone, MapPin, Computer,  } from "lucide-react";
+import { Mail,  MapPin, Computer } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const footerData = {
@@ -19,23 +19,23 @@ const footerData = {
       title: "Company",
       links: [
         { to: "/about", label: "About", href: "#" },
-        { to: "/careers", label: "Careers", href: "#" },
-        { to: "/blog", label: "Blog", href: "#" },
+        { to: "/letsfun", label: "Let's Fun", href: "#" },
+        { to: "/blogs", label: "Blog", href: "#" },
       ],
     },
     {
       title: "Support",
       links: [
         { to: "/contact", label: "Contact", href: "#" },
-        { href: "mailto:support@instacart.com", label: "Support" },
+        { href: "", label: "Support (Coming Soon)" },
         { to: "/faq", label: "FAQ", href: "#" },
       ],
     },
   ],
   contact: [
     { icon: Mail, text: "" },
-    { icon: Phone, text: "" },
-    { icon: MapPin, text: "" },
+    // { icon: Phone, text: "" },
+    { icon: MapPin, text: "Himachal Pradesh, India" },
   ],
   bottom: {
     copyright: "© 2026 MockPrepare. All rights reserved.",
@@ -57,7 +57,7 @@ const Footer = () => {
           {/* Brand  */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
-              < Computer className="w-6 h-6 text-white" />
+              <Computer className="w-6 h-6 text-white" />
               <span className="text-xl font-semibold">Mock-Prepare</span>
             </Link>
             <p className="text-sm text-white/70 mb-4">
