@@ -20,7 +20,7 @@ const AppLayout = () => {
           <Link to="/yourmock">
             <CardServe title="Free Test" buttonText="Click it" />
           </Link>
-          <CardServe title="Payment" buttonText="Get exiciting test" />
+          <CardServe title="Paid Mock Test" buttonText="Get exiciting test" />
           <Link to="/letsfun">
             <CardServe title="Mock Prepare" buttonText="what can do?" />
           </Link>
@@ -36,3 +36,8 @@ const AppLayout = () => {
 };
 
 export default AppLayout;
+
+//  <Link to="paidphymock">
+//    <CardServe title="Paid Mock Test" buttonText="Get exiciting test" />
+//    {location.pathname === "/paidphymock" && <Paid />}
+//  </Link>;

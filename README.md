@@ -75,3 +75,6 @@ STEPS:--
 \*\* The main challenges facing to me , my data is not working on smart phone means questions are not visible in phone view but it is showing on desktop , because local host , backend, database all are open in one palce , therefore it is running smoothly on my Desktop, but not in my phone.
 
 \*\* Solution: i should to be deploy beckend on render, then it will take a link ,and i have to put it that link on my frontend area where, localhost located.
+
+
+same thing i will do apply on Chemistry and Mathematics.
