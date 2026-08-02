@@ -78,3 +78,10 @@ STEPS:--
 
 
 same thing i will do apply on Chemistry and Mathematics.
+
+
+For blog********
+Sanity is the website where , i am using this to show our blog without written  heavy code and maintain easily, for installing this , i prefer
+*** npm install @sanity/client
+then connect to frontend to sanity , which performance will better for our website.
+I created a folder which name is sanity, and also created a file client.js on src.

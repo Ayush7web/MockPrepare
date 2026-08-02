@@ -11,6 +11,7 @@ import PhysicsMock from "./pages/PhysicsMock";
 import ChemistryMock from "./pages/ChemistryMock";
 import MathsMock from "./pages/MathsMock";
 
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,7 +24,7 @@ const App = () => {
           <Route path="chemistry" element={<ChemistryMock />} />
           <Route path="maths" element={<MathsMock />} />
 
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs" element={<Blogs /> } />
           <Route path="/letsfun" element={<LetsFun />} />
           <Route path="/login" element={<Login />} />
         </Route>
