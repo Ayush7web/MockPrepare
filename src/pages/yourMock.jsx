@@ -1,12 +1,45 @@
 // MockTestSection.jsx
 
 import { FaRocket, FaFlask, FaSquareRootAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import Physics from "../assets/Physics.jpg";
 import Chemistry from "../assets/chemistry.jpg";
 import Maths from "../assets/Maths.jpg";
+import { Link } from "react-router-dom";
+// import { onAuthStateChanged } from "firebase/auth";
+// import { auth } from "../utils/firebaseConfig";
+// import {useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
 
 const MockTestSection = () => {
+  // const [user, setUser] = useState(null);
+
+  // const navigate = useNavigate();
+  // const location = useLocation();
+
+  // Handle login or not
+  // const handleStartMock = (subjectPath) => {
+  //   if (!user) {
+  //     alert(
+  //       "Firstly, you have to be login , Then you eligible for Mock Prepare",
+  //     );
+  //     navigate("/login", { state: { from: location.pathname } });
+  //   } else {
+  //     navigate(subjectPath);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const notLogin = onAuthStateChanged(auth, (currentUser) => {
+  //     if (currentUser) {
+  //       setUser(currentUser);
+  //     } else {
+  //       setUser(null); // user login na hai
+  //     }
+  //   });
+
+  //   return () => notLogin();
+  // }, [auth]);
+
   return (
     <section className="bg-white py-16 px-6">
       {/* Heading */}
@@ -53,12 +86,17 @@ const MockTestSection = () => {
             </h2>
           </div>
           <div className="relative flex justify-center bottom-16">
-            <Link
-              to="/physics"
+            <Link to="/physics">
+              <p className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                Start Free Mock
+              </p>
+            </Link>
+            {/* <button
+              onClick={() => "/physics"}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300"
             >
               Start Free Mock
-            </Link>
+            </button> */}
           </div>
         </div>
 
@@ -85,12 +123,17 @@ const MockTestSection = () => {
             </h2>
           </div>
           <div className="relative flex justify-center bottom-16">
-            <Link
-              to="/chemistry"
+            <Link to="/chemistry">
+              <p className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                Start Free Mock
+              </p>
+            </Link>
+            {/* <button
+              onClick={() => "/chemistry"}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300"
             >
               Start Free Mock
-            </Link>
+            </button> */}
           </div>
         </div>
 
@@ -117,12 +160,17 @@ const MockTestSection = () => {
             </h2>
           </div>
           <div className="relative flex justify-center bottom-16">
-            <Link
-              to="/maths"
+            <Link to="/maths">
+              <p className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                Start Free Mock
+              </p>
+            </Link>
+            {/* <button
+              onClick={() => ("/maths")}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300"
             >
               Start Free Mock
-            </Link>
+            </button> */}
           </div>
         </div>
       </div>

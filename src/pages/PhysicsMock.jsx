@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import confetti from "canvas-confetti";
 
+
 // =====================================================================================
 
 const PhysicsMock = () => {
@@ -12,11 +13,12 @@ const PhysicsMock = () => {
   const [retrieveData, setRetrieveData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loader, setLoader] = useState(true);
-  const [selectedOption, setSelectedOption] = useState({}); // obj form
-  // const [clickedAnswer, setClickedAnswer] = useState();
+  const [selectedOption, setSelectedOption] = useState({});
+
 
   // here we use navigate , when user reached at last question then will be finish button , if click it then go to /yourmock page
   const navigate = useNavigate();
+ 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +40,9 @@ const PhysicsMock = () => {
 
     fetchData();
   }, []);
+
+ 
+
 
   // handle onclick function
 
@@ -84,6 +89,9 @@ const PhysicsMock = () => {
   //     toast.error("Don't Worry Bro , One More Try");
   //   }
   // }, [selectedOption, currentIndex]);
+
+
+
 
   return (
     <>

@@ -1,9 +1,26 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+// import { getAuth, signOut } from "firebase/auth";
+// import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // ==============
+  // const navigate = useNavigate();
+  // const auth = getAuth();
+
+  // const handleLogout = () => {
+  //   signOut(auth)
+  //     .then(() => {
+  //       alert("Logout Successfully");
+  //       navigate("/login");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Logout error:", error);
+  //     });
+  // };
 
   return (
     <nav className="bg-white sticky top-0 z-[60] shadow-sm">
@@ -31,7 +48,7 @@ const Navbar = () => {
           </Link>
 
           <Link to="/login" className="blue-red font-semibold text-xl">
-            Login
+           Login
           </Link>
         </div>
 
@@ -68,7 +85,6 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-    
   );
 };
 

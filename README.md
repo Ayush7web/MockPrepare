@@ -85,3 +85,7 @@ Sanity is the website where , i am using this to show our blog without written  
 *** npm install @sanity/client
 then connect to frontend to sanity , which performance will better for our website.
 I created a folder which name is sanity, and also created a file client.js on src.
+
+// For Login and OTP setup i use firebase console.
+
+Now , the main properties implemented is , when user comes in my website then it check in it's login or not.id store of user.
