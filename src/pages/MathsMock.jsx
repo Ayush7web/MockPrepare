@@ -4,7 +4,7 @@ import { CheckCircleIcon, Loader, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import confetti from "canvas-confetti";
-
+import { Helmet } from "react-helmet-async";
 // =====================================================================================
 
 const MathsMock = () => {
@@ -87,6 +87,23 @@ const MathsMock = () => {
   return (
     <>
       <div className="text-center mt-7">
+        {/* For Google search Interface */}
+        <Helmet>
+          <title>Maths Mock Test for Class 10th - mock-prepare</title>
+          <meta
+            name="Grow your Study vibe"
+            content="Practice the best mathematics mock test for class 10th. Improve your conceptual understanding for exams with mock-prepare."
+          />
+        </Helmet>
+        <div style={{ padding: "20px", textAlign: "center" }}>
+          <h1 style={{ fontSize: "28px", color: "#333" }}>
+            Maths Mock Test for Class 10th
+          </h1>
+          <p style={{ fontSize: "16px", color: "#666" }}>
+            Welcome to the Class 10 Maths mock test series. Practice important
+            questions here.
+          </p>
+        </div>
         <div className="font-semibold font-serif text-2xl text-blue-700">
           Sets of 15 Questions for Mathematics
         </div>
