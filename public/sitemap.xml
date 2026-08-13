@@ -4,4 +4,8 @@
     <loc>https://mockprepare.in/</loc>
     <priority>1.0</priority>
   </url>
+    <url>
+    <loc>https://mockprepare.in/yourmock</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
